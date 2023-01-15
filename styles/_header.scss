@@ -1,0 +1,149 @@
+@use "variable";
+
+header {
+  width: 100%;
+  height: 20rem;
+  background-image: url(../images/image-hero-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+
+  .mobile-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+
+    button {
+      background: none;
+      @include variable.buttons;
+    }
+
+    .menu-btn {
+      display: flex;
+      align-items: center;
+
+      #close-menu {
+        z-index: 2;
+        display: none;
+      }
+    }
+
+    .desktop-nav-list {
+      display: none;
+    }
+  }
+
+  .mobile-nav-list {
+    position: absolute;
+    z-index: 2;
+    top: -100%;
+    display: none;
+    background: #fff;
+    width: 90%;
+    border-radius: 0.5rem;
+
+    ul {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      list-style-type: none;
+
+      li {
+        font-family: variable.$font_family;
+        padding: 1.8rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+      }
+
+      li:nth-child(2) {
+        border: 0.1px solid hsl(0, 3%, 93%);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    height: 25rem;
+
+    .mobile-nav {
+      padding: 2rem;
+
+      .menu-btn {
+        display: none;
+      }
+
+      .desktop-nav-list {
+        display: flex;
+        ul {
+          display: flex;
+          list-style-type: none;
+          gap: 1rem;
+          color: #fff;
+
+          font-weight: 400;
+          font-family: variable.$font_family;
+          font-size: 0.85rem;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  header {
+    height: 25rem;
+    background-image: url(../images/image-hero-desktop.jpg);
+    background-position: contain;
+    background-repeat: no-repeat;
+
+    .mobile-nav {
+      padding: 3rem 4rem;
+
+      .desktop-nav-list {
+        display: flex;
+        ul {
+          gap: 1.5rem;
+          font-size: 1rem;
+          li {
+            color: #fff;
+            &:hover {
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  header {
+    height: 30rem;
+    background-image: url(../images/image-hero-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    .mobile-nav {
+      padding: 3.5rem 9rem;
+
+      .desktop-nav-list {
+        display: flex;
+        ul {
+          gap: 2rem;
+          color: #fff;
+
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}

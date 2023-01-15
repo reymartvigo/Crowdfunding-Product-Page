@@ -1,0 +1,16 @@
+$Moderatecyan: hsl(176, 50%, 47%);
+$Darkcyan: hsl(176, 72%, 28%);
+
+$Black: hsl(0, 0%, 0%);
+$Darkgray: hsl(0, 0%, 48%);
+
+$font_family: "Commissioner", sans-serif;
+
+@mixin buttons() {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  font-family: $font_family;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
