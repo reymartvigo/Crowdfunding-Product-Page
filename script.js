@@ -1,5 +1,3 @@
-import anime from "animejs";
-
 
 // NAVIGATION
 let open = document.getElementById("open-menu");
