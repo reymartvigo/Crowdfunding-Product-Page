@@ -11,15 +11,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap" rel="stylesheet">
   <title>Frontend Mentor || Crowd Funding Page</title>
-  <script src="node_modules/animejs/lib/anime.min.js"></script>
-
+  <script src="node_modules/animejs/lib/anime.min.js" type="text/javascript"></script>
   <script src="script.js" defer></script>
 
 </head>
 
 <body>
-
-
   <!--     Heading Section     -->
   <header>
     <div class="mobile-nav">
@@ -344,48 +341,49 @@
     </section>
     <div class="overlay" id="overlay-hidden"></div>
 
-    <script>
+    <script type="text/javascript">
+      window.onload = function () {
+        let open = document.getElementById("open-menu");
+        let close = document.getElementById("close-menu");
+        let mobileNav = document.getElementById("mobile-nav");
 
-      let open = document.getElementById("open-menu");
-      let close = document.getElementById("close-menu");
-      let mobileNav = document.getElementById("mobile-nav");
+        // OPEN MOBILE NAV FUNCTION
+        open.addEventListener("click", function () {
+          let animation = anime({
+            targets: ".mobile-nav-list",
+            keyframes: [{ translateY: -400 }, { translateY: 400 }],
+            duration: 500,
+            easing: "easeOutElastic(1, 5)",
+            loop: false,
+          });
 
-      // OPEN MOBILE NAV FUNCTION
-      open.addEventListener("click", function () {
-        let animation = anime({
-          targets: ".mobile-nav-list",
-          keyframes: [{ translateY: -400 }, { translateY: 400 }],
-          duration: 500,
-          easing: "easeOutElastic(1, 5)",
-          loop: false,
+          open.style.display = "none";
+          close.style.display = "flex";
+          mobileNav.style.display = "flex";
+          overlay.style.display = "flex";
+
+          open.onclick = animation.play;
         });
 
-        open.style.display = "none";
-        close.style.display = "flex";
-        mobileNav.style.display = "flex";
-        overlay.style.display = "flex";
+        // OPEN MOBILE NAV FUNCTION
 
-        open.onclick = animation.play;
-      });
+        // CLOSE MOBILE NAV FUNCTION
+        close.addEventListener("click", function () {
+          let animation = anime({
+            targets: ".mobile-nav-list",
+            keyframes: [{ translateY: 400 }, { translateY: -400 }],
+            duration: 540,
+            easing: "easeOutElastic(1, .8)",
+            loop: false,
+          });
+          open.style.display = "flex";
+          close.style.display = "none";
 
-      // OPEN MOBILE NAV FUNCTION
+          overlay.style.display = "none";
 
-      // CLOSE MOBILE NAV FUNCTION
-      close.addEventListener("click", function () {
-        let animation = anime({
-          targets: ".mobile-nav-list",
-          keyframes: [{ translateY: 400 }, { translateY: -400 }],
-          duration: 540,
-          easing: "easeOutElastic(1, .8)",
-          loop: false,
+          close.onlick = animation.play;
         });
-        open.style.display = "flex";
-        close.style.display = "none";
-
-        overlay.style.display = "none";
-
-        close.onlick = animation.play;
-      });
+      }
     </script>
 
   </main>
