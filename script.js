@@ -1,8 +1,8 @@
-/* NAVIGATION
+// NAVIGATION
 let open = document.getElementById("open-menu");
 let close = document.getElementById("close-menu");
 let mobileNav = document.getElementById("mobile-nav");
- NAVIGATION*/
+// NAVIGATION
 
 // ITEM LEFT
 let itemLeft = document.querySelectorAll("#item-left");
@@ -200,40 +200,21 @@ closeModal.addEventListener("click", () => {
 });
 // CLOSE BACK MODAL
 
-/* OPEN MOBILE NAV FUNCTION
+// OPEN MOBILE NAV FUNCTION
 open.addEventListener("click", function () {
-  let animation = anime({
-    targets: ".mobile-nav-list",
-    keyframes: [{ translateY: -400 }, { translateY: 400 }],
-    duration: 500,
-    easing: "easeOutElastic(1, 5)",
-    loop: false,
-  });
-
   open.style.display = "none";
   close.style.display = "flex";
   mobileNav.style.display = "flex";
   overlay.style.display = "flex";
-
-  open.onclick = animation.play;
 });
 
 // OPEN MOBILE NAV FUNCTION
 
 // CLOSE MOBILE NAV FUNCTION
 close.addEventListener("click", function () {
-  let animation = anime({
-    targets: ".mobile-nav-list",
-    keyframes: [{ translateY: 400 }, { translateY: -400 }],
-    duration: 540,
-    easing: "easeOutElastic(1, .8)",
-    loop: false,
-  });
   open.style.display = "flex";
   close.style.display = "none";
-
+  mobileNav.style.display = "none";
   overlay.style.display = "none";
-
-  close.onlick = animation.play;
 });
-CLOSE MOBILE NAV FUNCTION*/
+// CLOSE MOBILE NAV FUNCTION
