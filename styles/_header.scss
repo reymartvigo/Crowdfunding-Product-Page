@@ -38,11 +38,20 @@ header {
       display: none;
     }
   }
+  @keyframes openMenu {
+    0% {
+      transform: translateY(-400px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 
   .mobile-nav-list {
+    animation: openMenu 0.5s ease-out 0s normal backwards;
     position: absolute;
     z-index: 2;
-    top: -100%;
+    bottom: 0;
     display: none;
     background: #fff;
     width: 90%;

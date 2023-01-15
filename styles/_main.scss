@@ -1,5 +1,14 @@
 @use "variable";
 main {
+  @keyframes openMenu {
+    0% {
+      transform: translateY(-400px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
   width: 100%;
   padding: 1.5rem;
   display: flex;
@@ -92,6 +101,7 @@ main {
   }
 
   .back-project-modal {
+    animation: openMenu 0.5s ease-in 0s normal backwards;
     width: 85%;
     display: none;
     justify-content: center;
@@ -446,7 +456,47 @@ main {
   }
 
   // THANK YOU MODAL
+  @keyframes animation1 {
+    0% {
+      animation-timing-function: ease-in;
+      opacity: 1;
+      transform: translateY(-45px);
+    }
+    24% {
+      opacity: 1;
+    }
+    40% {
+      animation-timing-function: ease-in;
+      transform: translateY(-24px);
+    }
+    65% {
+      animation-timing-function: ease-in;
+      transform: translateY(-12px);
+    }
+    82% {
+      animation-timing-function: ease-in;
+      transform: translateY(-6px);
+    }
+    93% {
+      animation-timing-function: ease-in;
+      transform: translateY(-4px);
+    }
+    25%,
+    55%,
+    75%,
+    87% {
+      animation-timing-function: ease-out;
+      transform: translateY(0px);
+    }
+    100% {
+      animation-timing-function: ease-out;
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
   .thank-you-modal {
+    animation: animation1 1s ease-in 0s normal forwards;
     z-index: 2;
     width: 85%;
     position: absolute;

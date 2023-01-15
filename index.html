@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap" rel="stylesheet">
   <title>Frontend Mentor || Crowd Funding Page</title>
-  <script src="./node_modules/animejs/lib/anime.min.js" type="text/javascript"></script>
+
   <script src="script.js" defer></script>
 
 </head>
@@ -340,22 +340,8 @@
       <button id="got-it">Got it!</button>
     </section>
     <div class="overlay" id="overlay-hidden"></div>
-
-    <script>
-      let animation = anime({
-        targets: ".mobile-nav-list",
-        keyframes: [{ translateY: -400 }, { translateY: 400 }],
-        duration: 500,
-        easing: "easeOutElastic(1, 5)",
-        loop: false,
-      });
-
-      document.getElementById("open-menu").onclick = animation.play;
-    </script>
-
-
   </main>
 
-</body>
+</body>~
 
 </html>
