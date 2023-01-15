@@ -1,3 +1,6 @@
+import anime from "animejs";
+
+
 // NAVIGATION
 let open = document.getElementById("open-menu");
 let close = document.getElementById("close-menu");
